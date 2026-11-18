@@ -141,7 +141,7 @@ app.use((err, req, res, next) => {
     const message=err.message || "Internal Server error";
     res.status(status).json({message});
 });
-const PORT=7000;
+const PORT=process.env.PORT || 7000;
 app.listen(PORT,()=>{
     console.log(`server runnning at http://localhost:${PORT}`);
 })
